@@ -1,7 +1,7 @@
-﻿const API = "https://gestioncalidad3.onrender.com/api/InformeQuejas";
+﻿const API = "http://localhost:5016/api/InformeQuejas";
 
 // =====================
-// CARGAR QUEJAS (GET)
+// CARGAR QUEJAS
 // =====================
 document.addEventListener("DOMContentLoaded", cargar);
 
@@ -19,6 +19,7 @@ async function cargar() {
                     <td>${q.codigo}</td>
                     <td>${q.descripcion}</td>
                     <td>${q.fecha}</td>
+                    <td>${q.paciente ?? "Sin asignar"}</td>
                 </tr>
             `;
         });
@@ -29,7 +30,7 @@ async function cargar() {
 }
 
 // =====================
-// GUARDAR QUEJA (POST)
+// GUARDAR QUEJA
 // =====================
 async function guardar() {
     const codigo = document.getElementById("codigo").value;
@@ -45,7 +46,6 @@ async function guardar() {
         method: "POST"
     });
 
-    // limpiar campos
     document.getElementById("codigo").value = "";
     document.getElementById("descripcion").value = "";
     document.getElementById("fecha").value = "";
