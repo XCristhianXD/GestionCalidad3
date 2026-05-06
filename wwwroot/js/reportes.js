@@ -1,4 +1,4 @@
-﻿const API = "http://localhost:5016/api/InformeCalidad_Departamento";
+﻿const API = "https://gestioncalidad3.onrender.com/api/InformeCalidad_Departamento";
 
 // ============================
 // PROMEDIO DEL SISTEMA
