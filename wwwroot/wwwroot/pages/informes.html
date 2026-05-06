@@ -2,17 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Informes de Quejas</title>
+    <title>Informes de Calidad</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-
 <body>
 
-    <h1>Informes de Quejas</h1>
+    <h1>Informes de Calidad</h1>
 
     <!-- FORMULARIO -->
     <div>
         <input type="text" id="codigo" placeholder="Código">
+        <input type="number" id="calificacion" placeholder="Calificación (1-5)">
         <input type="text" id="descripcion" placeholder="Descripción">
         <input type="date" id="fecha">
         <button onclick="guardar()">Guardar</button>
@@ -21,19 +21,19 @@
     <hr>
 
     <!-- TABLA -->
-    <table width="100%">
+    <table border="1" width="100%">
         <thead>
             <tr>
                 <th>Código</th>
+                <th>Calificación</th>
                 <th>Descripción</th>
                 <th>Fecha</th>
             </tr>
         </thead>
-
         <tbody id="tabla"></tbody>
     </table>
 
-    <script src="../js/quejas.js"></script>
+    <script src="../js/informes.js"></script>
 
 </body>
 </html>

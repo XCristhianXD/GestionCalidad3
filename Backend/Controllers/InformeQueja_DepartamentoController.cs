@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GestionCalidad.Backend.Data;
+using GestionCalidad.Backend.Dominio;
+using GestionCalidad.Backend.DTO.Enfermera;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using GestionCalidad.Backend.Dominio;
-using GestionCalidad.Backend.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GestionCalidad.Backend.Controllers
 {
@@ -15,21 +16,29 @@ namespace GestionCalidad.Backend.Controllers
     public class InformeQueja_DepartamentoController : ControllerBase
     {
         private readonly GestionCalidadContext _context;
+        private readonly HttpClient httpClient;
 
-        public InformeQueja_DepartamentoController(GestionCalidadContext context)
+        private const string URL_ENFERMERAS =
+            "https://gestionenfermeria-be-production.up.railway.app/api/Enfermeras";
+
+        public InformeQueja_DepartamentoController(
+            GestionCalidadContext context,
+            HttpClient httpClient)
         {
             _context = context;
+            this.httpClient = httpClient;
         }
-
-
 
         [HttpGet("reporte/todos")]
         public async Task<IActionResult> GetTodosLosInformesQueja()
         {
-            var lista = await (
+            // 🔹 1. BD (tu query principal)
+            var listaBase = await (
                 from iqd in _context.InformeQueja_Departamento
-                join d in _context.Departamento on iqd.id_Departamento equals d.id_Departamento
-                join q in _context.InformeQueja on iqd.id_InformeQueja equals q.id_InformeQueja
+                join d in _context.Departamento
+                    on iqd.id_Departamento equals d.id_Departamento
+                join q in _context.InformeQueja
+                    on iqd.id_InformeQueja equals q.id_InformeQueja
                 where iqd.Estado != "Inactivo"
                 select new
                 {
@@ -41,7 +50,44 @@ namespace GestionCalidad.Backend.Controllers
                 }
             ).ToListAsync();
 
-            return Ok(lista);
+            // 🔹 2. API externa (enfermeras)
+            var enfermeras = await httpClient.GetFromJsonAsync<List<EnfermeraDTO>>(
+                URL_ENFERMERAS
+            );
+
+            if (enfermeras == null)
+            {
+                return Ok(listaBase.Select(x => new
+                {
+                    x.Departamento,
+                    x.Codigo,
+                    x.Descripcion,
+                    x.Fecha,
+                    x.CodigoPaciente,
+                    Enfermera = "No disponible"
+                }));
+            }
+
+            // 🔹 3. JOIN en memoria (solo aquí)
+            var resultado = listaBase.Select(x =>
+            {
+                var enf = enfermeras
+                    .FirstOrDefault(e => e.CodigoEnfermera == x.CodigoPaciente);
+
+                return new
+                {
+                    x.Departamento,
+                    x.Codigo,
+                    x.Descripcion,
+                    x.Fecha,
+                    x.CodigoPaciente,
+                    Enfermera = enf != null
+                        ? $"{enf.Nombre} {enf.ApellidoPaterno} {enf.ApellidoMaterno}"
+                        : "No encontrada"
+                };
+            }).ToList();
+
+            return Ok(resultado);
         }
 
         [HttpGet("reporte/paciente/{codigoPaciente}/departamento/{codigoDepartamento}")]

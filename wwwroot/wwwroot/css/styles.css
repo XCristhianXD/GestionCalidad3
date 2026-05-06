@@ -1,0 +1,71 @@
+﻿/* =========================
+   FONDO GENERAL MEJORADO
+========================= */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #eef2f7, #f8fafc);
+    color: #2c3e50;
+}
+
+.index-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    color: #7f8c8d;
+    margin-top: -10px;
+}
+
+/* =========================
+   MENU GRID
+========================= */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* =========================
+   TARJETAS BOTÓN
+========================= */
+.card-btn {
+    display: block;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border-left: 6px solid #3498db;
+}
+
+    .card-btn:hover {
+        transform: translateY(-6px);
+        background: #f0f8ff;
+        border-left: 6px solid #2980b9;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }

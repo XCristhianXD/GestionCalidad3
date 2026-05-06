@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Calidad - Departamento</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <h1>Informe Calidad - Departamento</h1>
+
+    <!-- FORMULARIO -->
+    <div>
+        <input type="text" id="codigoDepartamento" placeholder="Código Departamento">
+        <input type="text" id="codigoInforme" placeholder="Código Informe Calidad">
+        <input type="text" id="codigoAtencion" placeholder="Código Atención">
+        <button onclick="guardar()">Asignar</button>
+    </div>
+
+    <hr>
+
+    <!-- TABLA -->
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Departamento</th>
+                <th>Código</th>
+                <th>Calificación</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <script src="../js/informeCalidadDepartamento.js"></script>
+
+</body>
+</html>

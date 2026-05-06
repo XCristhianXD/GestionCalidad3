@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe Queja - Departamento</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <h1>Informe Queja - Departamento</h1>
+
+    <!-- FORMULARIO -->
+    <div>
+        <input type="text" id="codigoDepartamento" placeholder="Código Departamento">
+        <input type="text" id="codigoQueja" placeholder="Código Queja">
+        <input type="text" id="codigoPaciente" placeholder="Código Paciente">
+        <button onclick="guardar()">Asignar</button>
+    </div>
+
+    <hr>
+
+    <!-- TABLA -->
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Departamento</th>
+                <th>Código Queja</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Paciente</th>
+                <th>Enfermera</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <script src="../js/informeQuejaDepartamento.js"></script>
+
+</body>
+</html>

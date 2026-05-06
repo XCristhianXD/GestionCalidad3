@@ -1,5 +1,6 @@
 ﻿using GestionCalidad.Backend.Data;
 using GestionCalidad.Backend.Dominio;
+using GestionCalidad.Backend.DTO.Departamento;
 using GestionCalidad.Backend.DTO.Enfermera;
 using GestionCalidad.Backend.DTO.InformeQueja;
 using Microsoft.AspNetCore.Http;
@@ -27,64 +28,44 @@ namespace GestionCalidad.Backend.Controllers
             this.httpClient = httpClient;
         }
 
-
+        // GET: api/Departamentos
         [HttpGet]
         public async Task<IActionResult> GetInformeQueja()
         {
-            var quejas = await _context.InformeQueja
-                .Where(i => i.Estado != "Inactivo")
-                .ToListAsync();
-
-            var enfermeras = await httpClient.GetFromJsonAsync<List<EnfermeraDTO>>(
-                URL_ENFERMERAS
-            );
-
-            if (enfermeras == null)
-                return Ok(new List<InformeQuejaDTO>());
-
-            var lista = quejas
-                .Select(q =>
+            var lista = await (
+                from a in _context.InformeQueja
+                where a.Estado != "Inactivo"
+                select new InformeQuejaDTO
                 {
-                    var enf = enfermeras
-                        .FirstOrDefault(e => e.CodigoEnfermera == q.Codigo);
-
-                    // ❌ si no existe enfermera, se ignora
-                    if (enf == null)
-                        return null;
-
-                    return new InformeQuejaDTO
-                    {
-                        Codigo = q.Codigo,
-                        Descripcion = q.Descripcion,
-                        Fecha = q.Fecha,
-                        Paciente = $"{enf.Nombre} {enf.ApellidoPaterno} {enf.ApellidoMaterno}"
-                    };
-                })
-                .Where(x => x != null) // 🔥 elimina los null
-                .ToList();
+                    Codigo = a.Codigo,
+                    Descripcion = a.Descripcion,
+                    Fecha = a.Fecha
+                }
+            ).ToListAsync();
 
             return Ok(lista);
         }
-
-
-        // GET: api/InformeQuejas/5
+        // GET: api/Departamentos/5
         [HttpGet("{codigo}")]
         public async Task<IActionResult> GetInformeQueja(string codigo)
         {
-            var informe = await (from i in _context.InformeQueja
-                                 where i.Codigo == codigo && i.Estado != "Inactivo"
-                                 select new InformeQuejaDTO
-                                 {
-                                     Descripcion = i.Descripcion,
-                                     Fecha = i.Fecha,
-                                     Codigo = i.Codigo
-                                 }).FirstOrDefaultAsync();
+            var informe = await (
+                from a in _context.InformeQueja
+                where a.Codigo == codigo && a.Estado != "Inactivo"
+                select new InformeQuejaDTO
+                {
+                    Codigo = a.Codigo,
+                    Descripcion = a.Descripcion,
+                    Fecha = a.Fecha
+                }
+            ).FirstOrDefaultAsync();
 
             if (informe == null)
                 return NotFound();
 
             return Ok(informe);
         }
+
 
         // PUT: api/InformeQuejas/5
         [HttpPut("{codigo}")]
