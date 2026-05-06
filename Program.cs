@@ -21,7 +21,6 @@ var app = builder.Build();
 var port = Environment.GetEnvironmentVariable("PORT") ?? "10000";
 builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
-// Migraciones directas sin try-catch (como el tuyo)
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<GestionCalidadContext>();
@@ -34,6 +33,13 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseAuthorization();
+
+// ===============================
+// 🔥 ESTO ES LO QUE TE FALTABA
+// ===============================
+app.UseDefaultFiles();   // index.html por defecto
+app.UseStaticFiles();    // habilita wwwroot (HTML, CSS, JS)
+
 app.MapControllers();
 
 app.Run();

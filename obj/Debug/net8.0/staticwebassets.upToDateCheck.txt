@@ -1,0 +1,10 @@
+wwwroot\css\styles.css
+wwwroot\index.html
+wwwroot\js\departamentos.js
+wwwroot\js\informes.js
+wwwroot\js\quejas.js
+wwwroot\js\reportes.js
+wwwroot\pages\departamentos.html
+wwwroot\pages\informes.html
+wwwroot\pages\quejas.html
+wwwroot\pages\reportes.html

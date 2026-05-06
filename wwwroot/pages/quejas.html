@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Informes de Quejas</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <h1>Informes de Quejas</h1>
+
+    <!-- FORMULARIO -->
+    <div>
+        <input type="text" id="codigo" placeholder="Código">
+        <input type="text" id="descripcion" placeholder="Descripción">
+        <input type="date" id="fecha">
+        <button onclick="guardar()">Guardar</button>
+    </div>
+
+    <hr>
+
+    <!-- TABLA -->
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <script src="../js/quejas.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Departamentos</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <h1>Departamentos</h1>
+
+    <!-- FORMULARIO -->
+    <div>
+        <input type="text" id="codigo" placeholder="Código">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <button onclick="guardar()">Guardar</button>
+    </div>
+
+    <hr>
+
+    <!-- TABLA -->
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+
+    <script src="../js/departamentos.js"></script>
+
+</body>
+</html>
