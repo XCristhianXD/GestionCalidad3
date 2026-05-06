@@ -1,4 +1,4 @@
-﻿const API = "http://localhost:5016/api/InformeCalidads";
+﻿const API = "https://gestioncalidad3.onrender.com/api/InformeCalidads";
 
 // =====================
 // CARGAR INFORMES (GET)

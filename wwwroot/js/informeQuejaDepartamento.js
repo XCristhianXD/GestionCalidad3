@@ -1,4 +1,4 @@
-﻿const API = "http://localhost:5016/api/InformeQueja_Departamento";
+﻿const API = "https://gestioncalidad3.onrender.com/api/InformeQueja_Departamento";
 const API_REPORTE = `${API}/reporte/todos`;
 
 // =====================

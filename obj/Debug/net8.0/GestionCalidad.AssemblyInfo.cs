@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionCalidad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbc5aa73f6e660d4bf9755809cf20f9cfc6e36d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+870acd2105671af6875bfb55ece06947f73fc823")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionCalidad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionCalidad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

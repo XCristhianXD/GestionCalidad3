@@ -1,4 +1,4 @@
-﻿const API = "http://localhost:5016/api/Enfermeras/listar";
+﻿const API = "https://gestioncalidad3.onrender.com/api/Enfermeras/listar";
 
 async function cargarEnfermeras() {
     try {
