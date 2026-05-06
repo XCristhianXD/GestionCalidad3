@@ -1,0 +1,909 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "GestionCalidad",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Departamentos": {
+      "get": {
+        "tags": [
+          "Departamentos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Departamentos"
+        ],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Departamentos/{codigo}": {
+      "get": {
+        "tags": [
+          "Departamentos"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Departamentos"
+        ],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Departamentos"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/todos": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/promedio-sistema": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/promedio/general": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/promedio/anio/{anio}": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/promedio/anio/{anio}/mes/{mes}": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/departamento/{codigoDepartamento}": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}/mes/{mes}": {
+      "get": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/crear": {
+      "post": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoInforme",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoAtencion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/actualizar-atencion/{codigoInforme}": {
+      "put": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoInforme",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoAtencion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidad_Departamento/borrar/{codigoDepartamento}/{codigoInforme}": {
+      "delete": {
+        "tags": [
+          "InformeCalidad_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoInforme",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidads": {
+      "get": {
+        "tags": [
+          "InformeCalidads"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "InformeCalidads"
+        ],
+        "parameters": [
+          {
+            "name": "calificacion",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "descripcion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "codigo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeCalidads/{codigo}": {
+      "get": {
+        "tags": [
+          "InformeCalidads"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "InformeCalidads"
+        ],
+        "parameters": [
+          {
+            "name": "calificacion",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "descripcion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "InformeCalidads"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/reporte/todos": {
+      "get": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/reporte/paciente/{codigoPaciente}/departamento/{codigoDepartamento}": {
+      "get": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoPaciente",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/reporte/quejas/anio/{anio}": {
+      "get": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/reporte/departamento/{codigoDepartamento}": {
+      "get": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}": {
+      "get": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}/mes/{mes}": {
+      "get": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "anio",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "mes",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/crear": {
+      "post": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoQueja",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoPaciente",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/actualizar-paciente/{codigoQueja}": {
+      "put": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoQueja",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoPaciente",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQueja_Departamento/borrar/{codigoDepartamento}/{codigoQueja}": {
+      "delete": {
+        "tags": [
+          "InformeQueja_Departamento"
+        ],
+        "parameters": [
+          {
+            "name": "codigoDepartamento",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codigoQueja",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQuejas": {
+      "get": {
+        "tags": [
+          "InformeQuejas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "InformeQuejas"
+        ],
+        "parameters": [
+          {
+            "name": "descripcion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "codigo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/InformeQuejas/{codigo}": {
+      "get": {
+        "tags": [
+          "InformeQuejas"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "InformeQuejas"
+        ],
+        "parameters": [
+          {
+            "name": "descripcion",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fecha",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "InformeQuejas"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

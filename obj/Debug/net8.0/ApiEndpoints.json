@@ -1,0 +1,660 @@
+[
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.DepartamentosController",
+    "Method": "GetDepartamento",
+    "RelativePath": "api/Departamentos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.DepartamentosController",
+    "Method": "PostDepartamento",
+    "RelativePath": "api/Departamentos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.DepartamentosController",
+    "Method": "GetDepartamento",
+    "RelativePath": "api/Departamentos/{codigo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.DepartamentosController",
+    "Method": "PutDepartamento",
+    "RelativePath": "api/Departamentos/{codigo}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.DepartamentosController",
+    "Method": "DeleteDepartamento",
+    "RelativePath": "api/Departamentos/{codigo}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "PutCodigoAtencion",
+    "RelativePath": "api/InformeCalidad_Departamento/actualizar-atencion/{codigoInforme}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoInforme",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "codigoAtencion",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "DeleteInformeCalidad_Departamento",
+    "RelativePath": "api/InformeCalidad_Departamento/borrar/{codigoDepartamento}/{codigoInforme}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "codigoInforme",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "PostInformeCalidad_Departamento",
+    "RelativePath": "api/InformeCalidad_Departamento/crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigoInforme",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigoAtencion",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetPorDepartamento",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/departamento/{codigoDepartamento}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetPorDepartamentoAnio",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetPorDepartamentoAnioMes",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}/mes/{mes}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetPromedioSistema",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/promedio-sistema",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetPromedioPorAnio",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/promedio/anio/{anio}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetPromedioPorMes",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/promedio/anio/{anio}/mes/{mes}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetPromedioGeneral",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/promedio/general",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidad_DepartamentoController",
+    "Method": "GetTodosLosInformes",
+    "RelativePath": "api/InformeCalidad_Departamento/reporte/todos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidadsController",
+    "Method": "GetInformeCalidad",
+    "RelativePath": "api/InformeCalidads",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidadsController",
+    "Method": "PostInformeCalidad",
+    "RelativePath": "api/InformeCalidads",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "calificacion",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fecha",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidadsController",
+    "Method": "GetInformeCalidad",
+    "RelativePath": "api/InformeCalidads/{codigo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidadsController",
+    "Method": "PutInformeCalidad",
+    "RelativePath": "api/InformeCalidads/{codigo}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "calificacion",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fecha",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeCalidadsController",
+    "Method": "DeleteInformeCalidad",
+    "RelativePath": "api/InformeCalidads/{codigo}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "PutCodigoPaciente",
+    "RelativePath": "api/InformeQueja_Departamento/actualizar-paciente/{codigoQueja}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoQueja",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "codigoPaciente",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "DeleteInformeQueja_Departamento",
+    "RelativePath": "api/InformeQueja_Departamento/borrar/{codigoDepartamento}/{codigoQueja}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "codigoQueja",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "PostInformeQueja_Departamento",
+    "RelativePath": "api/InformeQueja_Departamento/crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigoQueja",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigoPaciente",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "GetQuejasPorDepartamento",
+    "RelativePath": "api/InformeQueja_Departamento/reporte/departamento/{codigoDepartamento}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "GetQuejasPorDepartamentoAnio",
+    "RelativePath": "api/InformeQueja_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "GetQuejasPorDepartamentoAnioMes",
+    "RelativePath": "api/InformeQueja_Departamento/reporte/departamento/{codigoDepartamento}/anio/{anio}/mes/{mes}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "mes",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "GetQuejasPorPacienteDepartamento",
+    "RelativePath": "api/InformeQueja_Departamento/reporte/paciente/{codigoPaciente}/departamento/{codigoDepartamento}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigoPaciente",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "codigoDepartamento",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "GetCantidadQuejasPorDepartamentoAnio",
+    "RelativePath": "api/InformeQueja_Departamento/reporte/quejas/anio/{anio}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "anio",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQueja_DepartamentoController",
+    "Method": "GetTodosLosInformesQueja",
+    "RelativePath": "api/InformeQueja_Departamento/reporte/todos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQuejasController",
+    "Method": "GetInformeQueja",
+    "RelativePath": "api/InformeQuejas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQuejasController",
+    "Method": "PostInformeQueja",
+    "RelativePath": "api/InformeQuejas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fecha",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQuejasController",
+    "Method": "GetInformeQueja",
+    "RelativePath": "api/InformeQuejas/{codigo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQuejasController",
+    "Method": "PutInformeQueja",
+    "RelativePath": "api/InformeQuejas/{codigo}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "fecha",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionCalidad.Backend.Controllers.InformeQuejasController",
+    "Method": "DeleteInformeQueja",
+    "RelativePath": "api/InformeQuejas/{codigo}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
