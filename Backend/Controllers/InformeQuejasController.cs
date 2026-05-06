@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using GestionCalidad.Backend.Data;
+using GestionCalidad.Backend.Dominio;
+using GestionCalidad.Backend.DTO.Enfermera;
+using GestionCalidad.Backend.DTO.InformeQueja;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using GestionCalidad.Backend.Dominio;
-using GestionCalidad.Backend.DTO.InformeQueja;
-using GestionCalidad.Backend.Data;
+using System.Net.Http.Json;
 
 namespace GestionCalidad.Backend.Controllers
 {
@@ -16,27 +14,58 @@ namespace GestionCalidad.Backend.Controllers
     public class InformeQuejasController : ControllerBase
     {
         private readonly GestionCalidadContext _context;
+        private readonly HttpClient httpClient;
 
-        public InformeQuejasController(GestionCalidadContext context)
+        private const string URL_ENFERMERAS =
+            "https://gestionenfermeria-be-production.up.railway.app/api/Enfermeras";
+
+        public InformeQuejasController(
+            GestionCalidadContext context,
+            HttpClient httpClient)
         {
             _context = context;
+            this.httpClient = httpClient;
         }
 
-        // GET: api/InformeQuejas
+
         [HttpGet]
         public async Task<IActionResult> GetInformeQueja()
         {
-            var lista = await (from i in _context.InformeQueja
-                               where i.Estado != "Inactivo"
-                               select new InformeQuejaDTO
-                               {
-                                   Descripcion = i.Descripcion,
-                                   Fecha = i.Fecha,
-                                   Codigo = i.Codigo
-                               }).ToListAsync();
+            var quejas = await _context.InformeQueja
+                .Where(i => i.Estado != "Inactivo")
+                .ToListAsync();
+
+            var enfermeras = await httpClient.GetFromJsonAsync<List<EnfermeraDTO>>(
+                URL_ENFERMERAS
+            );
+
+            if (enfermeras == null)
+                return Ok(new List<InformeQuejaDTO>());
+
+            var lista = quejas
+                .Select(q =>
+                {
+                    var enf = enfermeras
+                        .FirstOrDefault(e => e.CodigoEnfermera == q.Codigo);
+
+                    // ❌ si no existe enfermera, se ignora
+                    if (enf == null)
+                        return null;
+
+                    return new InformeQuejaDTO
+                    {
+                        Codigo = q.Codigo,
+                        Descripcion = q.Descripcion,
+                        Fecha = q.Fecha,
+                        Paciente = $"{enf.Nombre} {enf.ApellidoPaterno} {enf.ApellidoMaterno}"
+                    };
+                })
+                .Where(x => x != null) // 🔥 elimina los null
+                .ToList();
 
             return Ok(lista);
         }
+
 
         // GET: api/InformeQuejas/5
         [HttpGet("{codigo}")]
